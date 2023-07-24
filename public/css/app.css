@@ -1,1 +1,21 @@
 /* ici le CSS de l'appli */
+
+a:hover {
+    color: #BC956B;
+}
+
+body > .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin-right: 1rem;
+}
