@@ -3,7 +3,13 @@
         <li><a href="{{ path('main_accueil') }}" title="Accueil">Accueil</a></li>
 
         {% if app.user %}
-            <li><a href="{{ path('app_logout') }}" title="Déconnexion">Se déconnecter</a></li>
+                <li><a href="{{ path('app_logout') }}" title="Déconnexion">Se déconnecter</a></li>
+
+
+            {% if is_granted("ROLE_ADMIN") %}
+                <li><a href="{{ path('admin_accueil') }}" title="Admin">Admin</a></li>
+            {% endif %}
+
         {% else %}
                 <li><a href="{{ path('app_login') }}" title="Connexion">Se connecter</a></li>
                 <li><a href="{{ path('app_register') }}" title="Créer un compte">Créer un compte</a></li>
