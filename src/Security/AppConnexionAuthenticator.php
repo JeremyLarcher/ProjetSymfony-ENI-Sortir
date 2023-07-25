@@ -50,7 +50,7 @@ class AppConnexionAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-         return new RedirectResponse($this->urlGenerator->generate('main_acceuil'));
+         return new RedirectResponse($this->urlGenerator->generate('main_accueil'));
 
     }
 
