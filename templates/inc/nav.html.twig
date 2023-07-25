@@ -4,6 +4,16 @@
 
         {% if app.user %}
             <li><a href="{{ path('app_logout') }}" title="Déconnexion">Se déconnecter</a></li>
+
+
+            <li><a href="{{ path('create') }}" title="Profil create">Créer profil</a></li>
+            <li><a href="{{ path('delete') }}" title="Profil delete">Supprimer profil</a></li>
+            <li><a href="{{ path('profil') }}" title="Profil info">Informations profil</a></li>
+            <li><a href="{{ path('profil') }}" title="Profil">Mon profil</a></li>
+
+
+
+
         {% else %}
                 <li><a href="{{ path('app_login') }}" title="Connexion">Se connecter</a></li>
                 <li><a href="{{ path('app_register') }}" title="Créer un compte">Créer un compte</a></li>
