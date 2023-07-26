@@ -9,10 +9,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/sortie", name="sortie_")
+ */
 class SortieController extends AbstractController
 {
     /**
-     * @Route("/creersortie", name="creersortie")
+     * @Route("/creer", name="creer")
      */
     public function creersortie(Request $request)
     {
