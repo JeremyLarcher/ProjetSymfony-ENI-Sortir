@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | Créer une sortie
+{% endblock %}
+
+{% block body %}
+
+    <h2>Créer une nouvelle sortie</h2>
+
+    <p>Veuillez renseigner les champs suivants :</p>
+
+    {{ form_start(SortiesType) }}
+
+    {{ form_widget(SortiesType) }}
+
+    <button>Valider</button>
+
+    {{ form_end(SortiesType) }}
+{% endblock %}
