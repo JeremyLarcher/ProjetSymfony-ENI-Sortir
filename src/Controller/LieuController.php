@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Lieu;
+use App\Entity\Ville;
 use App\Form\LieuType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,6 +26,27 @@ class LieuController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // Récupérer la ville sélectionnée dans le champ EntityType
+            $ville = $form->get('ville')->getData();
+
+            // Si une nouvelle ville est saisie dans le champ VilleType imbriqué
+            $nouvelleVille = $form->get('nouvelleVille')->getData();
+            if ($nouvelleVille !== null && !empty($nouvelleVille->getNom()) && !empty($nouvelleVille->getCodePostal())) {
+                // Créer une nouvelle instance de l'entité Ville
+                $ville = new Ville();
+                $ville->setNom($nouvelleVille->getNom());
+                $ville->setCodePostal($nouvelleVille->getCodePostal());
+
+                // Sauvegarder la nouvelle ville dans la base de données
+
+                $entityManager->persist($ville);
+                $entityManager->flush();
+            }
+
+            // Associer la ville sélectionnée ou nouvellement créée à l'entité Lieu
+            $lieu->setVille($ville);
+
             $entityManager->persist($lieu);
             $entityManager->flush();
 

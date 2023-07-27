@@ -35,8 +35,9 @@ class SortieController extends AbstractController
 
 /* to do:   ajouter l'enregistrement des données de sortie créé en BDD
             Le campus organisateur s'ajoute automatiquement en fonction du campus associé à l'utilisateur et s'affiche dans un champ sans pouvoir être changé, j'ai passé 2h dessus trop chaud
-            la sélection du lieu se fait sous forme d'un menu déroulant en fonction de ce qui est dans la BDD, rue et code postal vienne s'insérer automatiquement suite au choix fait
-            Ajouter la possibilité de créé un nouveau lieu si celui souhaité n'est pas dans la liste.
+            C'est fait : la sélection du lieu se fait sous forme d'un menu déroulant en fonction de ce qui est dans la BDD,
+            Rue et code postal vienne s'insérer automatiquement suite au choix fait
+            C'est fait : Ajouter la possibilité de créé un nouveau lieu si celui souhaité n'est pas dans la liste.
             Ajouter le status "crée" automatiquement à la création d'une sortie (il sera modifiable plus tard par l'organisateur)
             Ajouter automatiquement à la création de la sortie l'id de l'organisateur dans le champ organisateur id
             C'est fait : La durée se donne en minute sous forme de chiffre (pas de string)

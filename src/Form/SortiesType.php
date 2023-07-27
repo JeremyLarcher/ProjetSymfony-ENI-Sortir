@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Campus;
+use App\Entity\Lieu;
 use App\Entity\Sortie;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -57,9 +58,10 @@ class SortiesType extends AbstractType
                 'required' => true
             ])
 
-            ->add('lieu', TextType::class, [
-                'label' => 'Lieu de la sortie :',
-                'required' => false
+            ->add('lieu', EntityType::class, [
+                'class' => Lieu::class,
+                'choice_label' => 'nom',
+                'required' => true,
             ])
 
         ;
