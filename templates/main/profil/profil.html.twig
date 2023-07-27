@@ -2,8 +2,22 @@
 
 
 {% block body %}
+
+ {#   prenom "user."#}
+
     <h1>todo : ici la page profil</h1>
-{% endblock %}
+          <section>
+            {{ participant.pseudo }}
+            {{ participant.prenom }}
+            {{ participant.nom }}
+            {{ participant.email }}
+            {{ participant.telephone }}
+
+        </section>
+
+
+
+   {% endblock %}
 
 {% block title %}
     {{ parent() }} | profil
