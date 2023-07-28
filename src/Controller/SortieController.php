@@ -9,27 +9,54 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/sortie", name="sortie_")
- */
 class SortieController extends AbstractController
 {
     /**
-     * @Route("/creer", name="creer")
+     * @Route("/sortie/creer", name="sortie_creer")
      */
-    public function creersortie(Request $request)
+    public function creersortie(Request $request, EntityManagerInterface $entityManager):Response
     {
-
 
         $sortie = new Sortie();
 
         $SortiesType = $this->createForm(SortiesType::class, $sortie);
+
+        $SortiesType->handleRequest($request);
+        
+        if ($SortiesType->isSubmitted()) { 
+            $sortie->setEtat("en cours");
+            $sortie->setEtatSortie(0);
+            $sortie->setMotifAnnulation("neant");
+            $sortie->setparticipants("néant");
+            $sortie->setOrganisateur($user= $this->getUser());
+            $sortie->setCampusOrganisateur(1); /*RECUP CODE CAMPUS A AJOUTER = code Poitiers pour l'instant*/
+
+            $entityManager->persist($sortie);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Sortie ajoutée avec succès !');
+            return $this->redirectToRoute('sortie_affichersortie');
+        }
 
 
         return $this->render('creersortie.html.twig',[
             'SortiesType'=>$SortiesType->createView()
         ]);
     }
+
+
+    /**
+     * @Route("/sortie/affichersortie", name="sortie_affichersortie")
+     */
+    public function affichersortie(): Response
+    {
+        return $this->render('sortie/affichersortie.html.twig', [
+
+        ]);
+    }
+
+
+
 }
 
 
