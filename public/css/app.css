@@ -1,27 +1,89 @@
-/* ici le CSS de l'appli */
+/*############################## Global  ###################################*/
 
-a:hover {
-    color: #BC956B;
+
+.form{
+    text-align:justify;
+    margin-left: 800px;
 }
 
-.container {
-    max-width: 1000px;
+/*############################## Haut de page  ###################################*/
+
+nav a{
+    text-decoration: none;
+}
+
+nav{
+    text-align: center;
+    max-width: 800px;
     margin: auto;
-    padding: 5px;
+
+}
+header{
+    background-color: blanchedalmond;
 }
 
-body > .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+
+
+/*##############################  Milieu de page  ###################################*/
+
+body {
+    background-color: #999999;
+    margin: 0;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
+
+/*##############################  Bas de page  ###################################*/
+
+footer{
+    color: #e0e0e0;
+    background-color: black;
+}
+footer a{
+    text-decoration: none;
+    color: #e0e0e0;
+}
+#copy{
+    text-align: center;
 }
 
-nav li {
-    margin-right: 1rem;
+
+
+/*##############################  Admin  ###################################*/
+
+/*##############################  Lieu  ###################################*/
+
+/*##############################  Accueil  ###################################*/
+
+/*##############################  Registration  ###################################*/
+
+/*##############################  Reset password  ###################################*/
+
+
+/*##############################  Security  ###################################*/
+
+.alert-danger {
+    color: red;
 }
+
+.mb-3{
+    font-weight: bold;
+}
+
+.signin {
+    color: lime;
+    text-align: center;
+}
+
+.checkbox{
+    text-decoration: underline;
+}
+
+.button login{
+
+}
+
+.mdp a{
+    text-decoration: none;
+    color: darkblue;
+}
+/*##############################  Sorties  ###################################*/

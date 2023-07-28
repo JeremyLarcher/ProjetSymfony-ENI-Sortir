@@ -1,19 +1,19 @@
 <nav>
     <ul>
-        <li><a href="{{ path('main_accueil') }}" title="Accueil">Accueil</a></li>
+       <a href="{{ path('main_accueil') }}" title="Accueil">Accueil</a> |
 
         {% if app.user %}
-                <li><a href="{{ path('app_logout') }}" title="Déconnexion">Se déconnecter</a></li>
-                <li><a href="{{ path('sortie_creer') }}" title="Créer une sortie">Créer une sortie</a></li>
+                <a href="{{ path('app_logout') }}" title="Déconnexion">Se déconnecter</a>
+                <a href="{{ path('sortie_creer') }}" title="Créer une sortie">Créer une sortie</a>
 
             {% if is_granted("ROLE_ADMIN") %}
-                <li><a href="{{ path('admin_accueil') }}" title="Admin">Admin</a></li>
+                <a href="{{ path('admin_accueil') }}" title="Admin">Admin</a>
             {% endif %}
 
         {% else %}
-                <li><a href="{{ path('app_login') }}" title="Connexion">Se connecter</a></li>
-                <li><a href="{{ path('app_register') }}" title="Créer un compte">Créer un compte</a></li>
-                <p>Test Claire</p>
+                <a href="{{ path('app_login') }}" title="Connexion">Se connecter</a> |
+                <a href="{{ path('app_register') }}" title="Créer un compte">Créer un compte</a> |
+
 
         {% endif %}
 
