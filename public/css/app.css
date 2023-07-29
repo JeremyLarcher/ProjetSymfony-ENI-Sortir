@@ -1,11 +1,43 @@
 /*############################## Global  ###################################*/
 
-
 .form{
-    text-align:justify;
-    margin-left: 800px;
+    width: 400px;
+    height: 300px;
+    background-color: rgb(31, 31, 31);
+    position: relative;
+    text-align: justify-all;
+    color: white;
+    align-items: center;
 }
 
+.form::before,
+.form::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ff0000, #00f0f0, #00ff00, #0000ff, #ff0000, #00f0f0, #00ff00, #0000ff, #f00f0f);
+    width: 100%;
+    height: 100%;
+    transform: scale(1.02);
+    z-index: -1;
+    background-size: 500%;
+    animation: animate 20s infinite;
+}
+.form::after {
+    filter: blur(50px);
+}
+@keyframes animate {
+    0% { background-position: 0 0; }
+    50% { background-position: 300% 0; }
+    100% { background-position: 0 0; }
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*############################## Haut de page  ###################################*/
 
 nav a{
@@ -29,6 +61,9 @@ header{
 body {
     background-color: #999999;
     margin: 0;
+    background-image: url("img/banniere.jpg");
+    background-size: cover;
+
 }
 
 
@@ -56,6 +91,10 @@ footer a{
 
 /*##############################  Registration  ###################################*/
 
+h1{
+    text-align: center;
+}
+
 /*##############################  Reset password  ###################################*/
 
 
@@ -70,7 +109,7 @@ footer a{
 }
 
 .signin {
-    color: lime;
+    color: aliceblue;
     text-align: center;
 }
 
@@ -84,6 +123,6 @@ footer a{
 
 .mdp a{
     text-decoration: none;
-    color: darkblue;
+    color: white;
 }
 /*##############################  Sorties  ###################################*/

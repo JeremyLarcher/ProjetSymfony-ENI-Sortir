@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Sortie;
 use App\Form\SortiesType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,11 +26,11 @@ class SortieController extends AbstractController
         
         if ($SortiesType->isSubmitted()) { 
             $sortie->setEtat("en cours");
-            $sortie->setEtatSortie(0);
+          /*  $sortie->setEtatSortie(0);*/
             $sortie->setMotifAnnulation("neant");
-            $sortie->setparticipants("néant");
+         /*   $sortie->setparticipants("néant");*/
             $sortie->setOrganisateur($user= $this->getUser());
-            $sortie->setCampusOrganisateur(1); /*RECUP CODE CAMPUS A AJOUTER = code Poitiers pour l'instant*/
+      /*      $sortie->setCampusOrganisateur(1);*/ /*RECUP CODE CAMPUS A AJOUTER*/
 
             $entityManager->persist($sortie);
             $entityManager->flush();

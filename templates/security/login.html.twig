@@ -15,29 +15,30 @@
     {% endif %}
 
     <h1 class="signin">Please sign in</h1>
-        <div class="form">
-            <label for="inputEmail">Email</label>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-            <label for="inputPassword">Mot de passe</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        <div class="box">
+            <div class="form">
+                <label for="inputEmail">Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus> <br>
+                <label for="inputPassword">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-            <input type="hidden" name="_csrf_token"
-                value="{{ csrf_token('authenticate') }}">
+                <input type="hidden" name="_csrf_token"
+                    value="{{ csrf_token('authenticate') }}">
 
 
+                    <button class="button login" type="submit">
+                        Sign in
+                    </button>
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Se souvenir de moi
-                </label>
-            </div>
-
-                <button class="button login" type="submit">
-                    Sign in
-                </button>
-
-                <div class="mdp">
-                    <a href="{{ path('app_forgot_password_request') }}" title="oublie mot de passe">Mot de passe oublié ?</a>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Se souvenir de moi
+                    </label>
                 </div>
+
+                    <div class="mdp">
+                        <br> <a href="{{ path('app_forgot_password_request') }}" title="oublie mot de passe">Mot de passe oublié ?</a>
+                    </div>
+            </div>
         </div>
 {% endblock %}
