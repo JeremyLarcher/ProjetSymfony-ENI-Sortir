@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -25,11 +25,13 @@
                 <main>
                     {% block body %}{% endblock %}
                 </main>
+
+                <footer>
+                    {% include ('inc/footer.html.twig') %}
+                </footer>
+
         </body>
 
-    <footer>
-        {% include('inc/nav.html.twig') %}
-        {% include ('inc/footer.html.twig') %}
-    </footer>
+
 
 </html>
