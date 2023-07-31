@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Sortie;
 use App\Form\SortiesType;
+use App\Repository\EtatRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +16,7 @@ class SortieController extends AbstractController
     /**
      * @Route("/sortie/creer", name="sortie_creer")
      */
-    public function creersortie(Request $request, EntityManagerInterface $entityManager):Response
+    public function creersortie(Request $request, EntityManagerInterface $entityManager, EtatRepository $etatRepository):Response
     {
 
         $sortie = new Sortie();
@@ -26,11 +27,10 @@ class SortieController extends AbstractController
         
         if ($SortiesType->isSubmitted()) { 
             $sortie->setEtat("en cours");
-          /*  $sortie->setEtatSortie(0);*/
-            $sortie->setMotifAnnulation("neant");
-         /*   $sortie->setparticipants("néant");*/
-            $sortie->setOrganisateur($user= $this->getUser());
-      /*      $sortie->setCampusOrganisateur(1);*/ /*RECUP CODE CAMPUS A AJOUTER*/
+            $sortie->setEtatSortie($etatRepository->findOneBy(['libelle' => 'créée']));
+            $sortie->setMotifAnnulation("");
+            $sortie->setOrganisateur($this->getUser());
+            $sortie->setCampusOrganisateur($this->getUser()->getCampus()); /*RECUP CODE CAMPUS A AJOUTER*/
 
             $entityManager->persist($sortie);
             $entityManager->flush();
