@@ -40,23 +40,20 @@
     justify-content: center;
     align-items: center;
 }
-
 /*############################## Haut de page  ###################################*/
 
 nav a{
     text-decoration: none;
-    color:white;
 }
 
 nav{
     text-align: center;
     max-width: 800px;
     margin: auto;
-}
 
+}
 header{
     background-color: blanchedalmond;
-    background-image: url("img/banniere.jpg");
 }
 
 
@@ -66,17 +63,9 @@ header{
 body {
     background-color: #999999;
     margin: 0;
-    background-image: url("");
+    background-image: url("img/banniere.jpg");
     background-size: cover;
-    padding:0;
-    height:100%;
 
-}
-
-main{
-    min-height:100%;
-    position:relative;
-    padding-bottom:100px;
 }
 
 /*##############################  Bas de page  ###################################*/
@@ -84,10 +73,6 @@ main{
 footer{
     color: #e0e0e0;
     background-color: black;
-    position:absolute;
-    bottom:0;  /* on le colle en bas */
-    width:100%;
-    height:100px;
 }
 footer a{
     text-decoration: none;
@@ -133,37 +118,8 @@ h1{
     text-decoration: underline;
 }
 
-.button{
-    border: 0;
-    background: transparent;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    padding: 8px 30px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1.5em;
-    box-shadow: 0 -0px 0 0 rgba(143, 64, 248, .5), 0 0 0 0 rgba(39, 200, 255, .5);
-    transition: all .2s;
-}
-button::after{
-    content:"";
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(225deg, #27d86c 0%, #26caf8 50%, #c625d0 100%);
-    position: absolute;
-    top: -50px;
-    left: -100px;
-    z-index: -1;
-    transition: all .5s;
-}
+.button login{
 
-button:hover:after{
-    transform: rotate(150deg);
-}
-button:hover{
-    transform: translate(0, -6px);
-    box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, .25), -10px 10px 25px 0 rgba(39, 200, 255, .25);
 }
 
 .mdp a{
