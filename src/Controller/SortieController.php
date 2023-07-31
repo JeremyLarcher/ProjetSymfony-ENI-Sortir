@@ -5,16 +5,20 @@ namespace App\Controller;
 use App\Entity\Sortie;
 use App\Form\SortiesType;
 use App\Repository\EtatRepository;
+use App\Repository\SortieRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/sortie", name="sortie_")
+ */
 class SortieController extends AbstractController
 {
     /**
-     * @Route("/sortie/creer", name="sortie_creer")
+     * @Route("/creer", name="creer")
      */
     public function creersortie(Request $request, EntityManagerInterface $entityManager, EtatRepository $etatRepository):Response
     {
@@ -47,11 +51,14 @@ class SortieController extends AbstractController
 
 
     /**
-     * @Route("/sortie/affichersortie", name="sortie_affichersortie")
+     * @Route("/affichersortie", name="affichersortie")
      */
-    public function affichersortie(): Response
+    public function affichersortie(SortieRepository $sortieRepository): Response
     {
+
+        $sorties = $sortieRepository->findAll();
         return $this->render('sortie/affichersortie.html.twig', [
+            'sorties' => $sorties,
 
         ]);
     }
