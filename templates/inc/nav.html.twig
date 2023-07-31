@@ -5,6 +5,7 @@
         {% if app.user %}
                 <a href="{{ path('app_logout') }}" title="Déconnexion">Se déconnecter</a>
                 <a href="{{ path('sortie_creer') }}" title="Créer une sortie">Créer une sortie</a>
+                <a href="{{ path('sortie_affichersortie') }}" title="AfficherSorties">Afficher les sorties !</a>
 
             {% if is_granted("ROLE_ADMIN") %}
                 <a href="{{ path('admin_accueil') }}" title="Admin">Admin</a>
