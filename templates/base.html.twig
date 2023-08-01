@@ -1,32 +1,37 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=yes, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}Sortir !{% endblock %}</title>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=yes, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>
+            {% block title %}Sortir !{% endblock %}
+        </title>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+        <link rel="icon" href="{{ asset('css/img/favicon.ico') }}">
 
-    {% block extrastyles %}{% endblock %}
-</head>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {% block extrastyles %}
+
+        {% endblock %}
+    </head>
+
+        <body>
+                <header>
+                    {% include('inc/nav.html.twig') %}
+                </header>
+
+                <main>
+                    {% block body %}{% endblock %}
+                </main>
+
+                <footer>
+                    {% include ('inc/footer.html.twig') %}
+                </footer>
+
+        </body>
 
 
-    <body>
-        <div class="container">
-            <header>
-                {% include('inc/nav.html.twig') %}
-            </header>
 
-            <main>
-                {% block body %}{% endblock %}
-            </main>
-
-            <footer>
-                {% include ('inc/footer.html.twig') %}
-            </footer>
-        </div>
-    </body>
 </html>

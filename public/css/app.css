@@ -1,27 +1,273 @@
-/* ici le CSS de l'appli */
+/*############################## Global  ###################################*/
+
+
+
+.registration_form {
+    background: rgba(255, 255, 255, .3);
+    padding: 3rem;
+    height: 320px;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-weight: 500;
+    opacity: .7;
+    font-size: 1.4rem;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+}
+
+a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 12px;
+}
 
 a:hover {
-    color: #BC956B;
+    text-shadow: 2px 2px 6px #00000040;
+}
+
+a:active {
+    text-shadow: none;
+}
+
+.box {
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+.box::before,
+.box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ff0000, #00f0f0, #00ff00, #0000ff, #ff0000, #00f0f0, #00ff00, #0000ff, #f00f0f);
+    width: 100%;
+    height: 100%;
+    transform: scale(1.02);
+    z-index: -1;
+    background-size: 500%;
+    animation: animate 20s infinite;
+}
+
+.box::after{
+    filter: blur(50px);
+}
+
+@keyframes animate {
+    0% { background-position: 0 0; }
+    50% { background-position: 300% 0; }
+    100% { background-position: 0 0; }
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    padding: 1rem;
+    width: 200px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);
+    color: white;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    transition: all .3s;
+    margin-bottom: 2em;
+}
+
+input:hover,
+input[type="email"]:focus,
+input[type="password"]:focus{
+    background: rgba(255,255,255,0.1);
+    box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+.drop {
+    background: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+.drop-1 {
+    height: 80px; width: 80px;
+    top: -20px; left: -40px;
+    z-index: -1;
+}
+
+.drop-2 {
+    height: 80px; width: 80px;
+    bottom: -30px; right: -10px;
+}
+
+.drop-3 {
+    height: 100px; width: 100px;
+    bottom: 120px; right: -50px;
+    z-index: -1;
+}
+
+.drop-4 {
+    height: 120px; width: 120px;
+    top: -60px; right: -60px;
+}
+
+.drop-5 {
+    height: 60px; width: 60px;
+    bottom: 170px; left: 90px;
+    z-index: -1;
+}
+
+/*############################## Haut de page  ###################################*/
+
+nav a{
+    text-decoration: none;
+}
+
+nav{
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    color: #e0e0e0;
+    background-color: transparent;
+    position:absolute;
+    top:0;  /* on le colle en bas */
+    width:100%;
+    height:70px;
+}
+
+header{
+    background-color: blanchedalmond;
+}
+
+
+
+/*##############################  Milieu de page  ###################################*/
+
+body {
+    margin: 0;
+    background-size: cover;
+    background: #999999 linear-gradient(45deg, #FC466B, #3F5EFB);
+    height: 100vh;
+    font-family: arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 5px;
+    position: relative;
 }
 
-body > .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/*##############################  Bas de page  ###################################*/
+
+footer{
+    color: #e0e0e0;
+    background-color: transparent;
+    position:absolute;
+    bottom:0;  /* on le colle en bas */
+    width:100%;
+    height:70px;   /* Hauteur du pied de page */
+}
+footer a{
+    text-decoration: none;
+    color: #e0e0e0;
+}
+#copy{
+    text-align: center;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
+
+
+/*##############################  Admin  ###################################*/
+
+/*##############################  Lieu  ###################################*/
+
+/*##############################  Accueil  ###################################*/
+
+/*##############################  Registration  ###################################*/
+
+h1{
+    text-align: center;
 }
 
-nav li {
-    margin-right: 1rem;
+/*##############################  Reset password  ###################################*/
+
+
+/*##############################  Security  ###################################*/
+
+.alert-danger {
+    color: red;
 }
+
+.mb-3{
+    font-weight: bold;
+}
+
+.signin {
+    color: aliceblue;
+    text-align: center;
+}
+
+.checkbox{
+    text-decoration: underline;
+}
+
+
+.button {
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    position: relative;
+    transition: all .2s;
+    overflow: hidden;
+    color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 -0px 0 0 rgba(143, 64, 248, .5), 0 0 0 0 rgba(39, 200, 255, .5);
+}
+button::after {
+    content: '';
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background-image: linear-gradient(225deg, #27d86c 0%, #26caf8 50%, #c625d0 100%);
+    z-index: -1;
+    transition: all .5s;
+}
+button:hover::after {
+    transform: rotate(150deg);
+}
+
+button:hover {
+    transform: translate(0,-6px);
+    box-shadow: 10px -10px 25px 0 rgba(143,64, 248, .25), -10px 10px 25px 0 rgba(39, 200, 255, .25);
+}
+
+/*##############################  Sorties  ###################################*/

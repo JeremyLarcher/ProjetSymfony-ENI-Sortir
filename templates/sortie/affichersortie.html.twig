@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les sorties{% endblock %}
+
+{% block body %}
+    <h1>Les sorties</h1>
+
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Date de début</th>
+            <th>Date limite d'inscription</th>
+            <th>Nombre d'inscriptions max</th>
+            <th>Infos sortie</th>
+            <th>État</th>
+            <th>Campus</th>
+        </tr>
+        {% for sortie in sorties %}
+            <tr>
+                <td>{{ sortie.nom }}</td>
+                <td>{{ sortie.dateHeureDebut|date('Y-m-d H:i:s') }}</td>
+                <td>{{ sortie.dateLimiteInscription|date('Y-m-d H:i:s') }}</td>
+                <td>{{ sortie.nbInscriptionsMax }}</td>
+                <td>{{ sortie.infosSortie }}</td>
+                <td>{{ sortie.etat }}</td>
+                <td>{{ sortie.campusOrganisateur }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+{% endblock %}

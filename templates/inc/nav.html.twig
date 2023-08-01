@@ -1,23 +1,21 @@
 <nav>
     <ul>
-        <li><a href="{{ path('main_accueil') }}" title="Accueil">Accueil</a></li>
+       <a href="{{ path('main_accueil') }}" title="Accueil">Accueil</a> |
 
         {% if app.user %}
-            <li><a href="{{ path('app_logout') }}" title="Déconnexion">Se déconnecter</a></li>
+                <a href="{{ path('app_logout') }}" title="Déconnexion">Se déconnecter</a>
+                <a href="{{ path('sortie_creer') }}" title="Créer une sortie">Créer une sortie</a>
+                <a href="{{ path('sortie_affichersortie') }}" title="AfficherSorties">Afficher les sorties !</a>
 
-
-            <li><a href="{{ path('profil_create') }}" title="Profil create">Créer profil</a></li>
-            <li><a href="{{ path('profil_delete') }}" title="Profil delete">Supprimer profil</a></li>
-            <li><a href="{{ path('profil_detail') }}" title="Profil info">Informations profil</a></li>
-            <li><a href="{{ path('profil_modifier') }}" title="Profil info">Informations modifier profil</a></li>
-
-
-
-
+            {% if is_granted("ROLE_ADMIN") %}
+                <a href="{{ path('admin_accueil') }}" title="Admin">Admin</a>
+            {% endif %}
 
         {% else %}
-                <li><a href="{{ path('app_login') }}" title="Connexion">Se connecter</a></li>
-                <li><a href="{{ path('app_register') }}" title="Créer un compte">Créer un compte</a></li>
+                <a href="{{ path('app_login') }}" title="Connexion">Se connecter</a> |
+                <a href="{{ path('app_register') }}" title="Créer un compte">Créer un compte</a> |
+
+
         {% endif %}
 
     </ul>
