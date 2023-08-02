@@ -7,13 +7,13 @@ use App\Entity\Participant;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Component\HttpFoundation\Request;
 
 
 
 
 /**
- * @Route("/profil", name="profil_")
+ * @Route("/participant", name="profil_")
  */
 
 
@@ -49,11 +49,20 @@ class ProfilController extends AbstractController
     }
 
     /**
-     * @Route("/delete", name="delete", methods={"DELETE"})
+     * @Route("/{id}/delete", name="delete", methods={"GET"})
      */
-    public function delete(): Response
+    public function delete(Request $request, int $id, ParticipantRepository $participantRepository): Response
     {
-        return $this->render('main/profil/delete.html.twig', [
+            $participant=$participantRepository->find($id);
+
+            $participantRepository->remove($participant, true);
+
+            $this->addFlash('sup', 'Votre compte a bien été supprimée');
+
+
+
+
+        return $this->render('main/accueil.html.twig', [
 
         ]);
     }
