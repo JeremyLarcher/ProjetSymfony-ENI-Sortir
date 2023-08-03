@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+ {#   prenom "user."#}
+
+    <h1>todo : Modification du profil</h1>
+
+            <div class="container">
+                  <div class="box">
+                  {{ form_start(ModifierProfil) }}
+                  {{ form_widget (ModifierProfil) }} <br>
+                  <button type ="submit" class="button"> Validé </button>
+                  {{ form_end(ModifierProfil) }}
+                      <div class="drop drop-1"></div>
+                      <div class="drop drop-2"></div>
+                      <div class="drop drop-3"></div>
+                      <div class="drop drop-4"></div>
+                      <div class="drop drop-5"></div>
+                  </div>
+            </div>
+
+
+{% endblock %}
+
+{% block title %}Modification du profil
+    {{ parent() }} | profil
+{% endblock %}
