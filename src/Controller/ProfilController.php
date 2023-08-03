@@ -11,8 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-
-
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 
 /**
@@ -71,11 +70,13 @@ use Symfony\Component\HttpFoundation\Request;
         /**
          * @Route("/{id}/delete", name="delete", methods={"GET"})
          */
-        public function delete(Request $request, int $id, ParticipantRepository $participantRepository): Response
+        public function delete(Request $request, int $id, ParticipantRepository $participantRepository, TokenStorageInterface $tokenStorage): Response
         {
             $participant = $participantRepository->find($id);
 
             $participantRepository->remove($participant, true);
+
+            $tokenStorage->setToken(null);
 
             $this->addFlash('sup', 'Votre compte a bien été supprimée');
 
