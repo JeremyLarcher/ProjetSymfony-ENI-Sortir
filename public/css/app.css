@@ -1,7 +1,6 @@
 /*############################## Global  ###################################*/
 
 
-
 .registration_form {
     background: rgba(255, 255, 255, .3);
     padding: 3rem;
@@ -69,6 +68,8 @@ a:active {
     50% { background-position: 300% 0; }
     100% { background-position: 0 0; }
 }
+
+
 
 input {
     background: transparent;
@@ -140,6 +141,11 @@ input[type="password"]:focus{
     z-index: -1;
 }
 
+.remerciements{
+    text-align: right;
+    font-weight: bold;
+}
+
 /*############################## Haut de page  ###################################*/
 
 nav a{
@@ -171,7 +177,7 @@ body {
     background-size: cover;
     background: #999999 linear-gradient(45deg, #FC466B, #3F5EFB);
     height: 100vh;
-    font-family: arial, sans-serif;
+    font-family: 'Edu SA Beginner', cursive;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -238,7 +244,7 @@ h1{
 
 
 .button {
-    padding: 20px 50px;
+    padding: 3px 30px;
     font-size: 1.5rem;
     cursor: pointer;
     border: 0;
