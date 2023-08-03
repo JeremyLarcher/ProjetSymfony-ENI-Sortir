@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+ {#   prenom "user."#}
+
+    <h1>todo : ici la page profil</h1>
+          <section>
+              <div> Pseudo:</div>
+            {{ participant.pseudo }}
+              <div> prenom:</div>
+            {{ participant.prenom }}
+              <div> nom:</div>
+            {{ participant.nom }}
+              <div> email:</div>
+            {{ participant.email }}
+              <div> telephone:</div>
+            {{ participant.telephone }}
+
+        </section>
+
+
+    <a href="{{ path('profil_delete', {'id':participant.id}) }}" title="delete profil">Supprimer mon profil</a>
+    <br>
+    <a href="{{ path('profil_modifier') }}" title="modifier profil">Modifier mon profil</a>
+
+
+
+{% endblock %}
+
+{% block title %}
+    {{ parent() }} | profil
+{% endblock %}
