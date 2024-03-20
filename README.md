@@ -8,7 +8,6 @@ Environnement technique :
   - Symfony 5.4 (Symfony CLI)
   - TWIG
   - CSS
-  - Javascript
   - MySQL
   - PHPmyAdmin / Serveur apache
   - IDE : Intelli J
